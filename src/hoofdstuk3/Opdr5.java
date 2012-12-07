@@ -40,6 +40,10 @@ public class Opdr5 extends Applet implements ActionListener
 		g.fillRect(getWidth()/3, 0, getWidth()/3, getHeight());
 		g.setColor(new Color(111,156,171));
 		g.fillRect(getWidth()/3*2, 0, getWidth()/3, getHeight());
+		knop1.setBounds(0, getHeight()/4, getWidth()/3, 20);
+		knop2.setBounds(getWidth()/3, getHeight()/4, getWidth()/3, 20);
+		knop3.setBounds(2*getWidth()/3, getHeight()/4, getWidth()/3, 20);
+		textField.setBounds(getWidth()/6, getHeight()/2, getWidth()/3*2, 20);
 	}
 	
 	public void actionPerformed(ActionEvent e)
