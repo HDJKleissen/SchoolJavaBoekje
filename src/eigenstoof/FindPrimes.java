@@ -10,7 +10,6 @@ public class FindPrimes extends Applet implements ActionListener
 	Button knop;
 	TextField textField1, textField2;
 	TextArea textArea1;
-	String newline = System.getProperty("line.separator");
 
 	public void init()
 	{
@@ -44,7 +43,7 @@ public class FindPrimes extends Applet implements ActionListener
 		if(isPrime)
 			textArea1.setText(intNum + " is a prime number!");
 		else
-			textArea1.setText(intNum + " is not a prime number." + newline + " (dividable by " + i + ")");
+			textArea1.setText(intNum + " is not a prime number.\n (dividable by " + i + ")");
 	}
 	
 	public boolean checkPrime(double number)
