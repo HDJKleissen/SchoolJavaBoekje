@@ -6,8 +6,6 @@ import java.awt.event.*;
 
 public class Opdr6 extends Applet implements ActionListener
 {
-	
-	int wPuntjes = 0, bPuntjes = 0;
 	TextField invoerVeld1, invoerVeld2, uitvoerVeld;
 	Button knop;
 	
@@ -40,6 +38,13 @@ public class Opdr6 extends Applet implements ActionListener
 	
 	public void actionPerformed(ActionEvent e)
 	{
-		
+		int wPuntjes = Integer.parseInt(invoerVeld1.getText());
+		int bPuntjes = Integer.parseInt(invoerVeld2.getText());
+		int aanbW = wPuntjes/5;
+		int aanbB = bPuntjes/5;
+		int overW = wPuntjes%5;
+		int overB = bPuntjes%5;
+		double total = (aanbW*2.00) + (aanbB*2.50) + (overW*0.50) + (overB*0.60);
+		uitvoerVeld.setText("Totaal: " + total + "0");
 	}
 }
