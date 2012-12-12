@@ -8,8 +8,8 @@ public class Opdr6 extends Applet implements ActionListener
 {
 	TextField pinField, bedragField;
 	Button knop, resetKnop;
-	double saldo = 1000;
-	int pin = 1234;
+	double saldo = 1000, inpSald;
+	int pin = 1234, inpPin;
 	boolean wrongPin = false, wrongSald = false;
 	
 	public void init()
@@ -29,7 +29,7 @@ public class Opdr6 extends Applet implements ActionListener
 		knop.addActionListener(this);
 		
 		resetKnop = new Button("Reset");
-		resetKnop.setBounds(50, 180, 90, 20);
+		resetKnop.setBounds(50, 175, 90, 20);
 		add(resetKnop);
 		resetKnop.addActionListener(this);
 	}
@@ -70,7 +70,14 @@ public class Opdr6 extends Applet implements ActionListener
 		}
 		if(source == resetKnop)
 		{
-			NOG DOEN
+			wrongPin = false;
+			wrongSald = false;
+			inpPin = 0;
+			inpSald = 0;
+			saldo = 1000;
+			pin = 1234;
+			pinField.setText("");
+			bedragField.setText("");
 		}
 		repaint();
 	}
