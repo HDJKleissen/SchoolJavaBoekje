@@ -9,6 +9,8 @@ public class Opdr1 extends Applet implements ActionListener
 {
 	TextField numField, outputField;
 	Button knop;
+	double highest, lowest;
+	boolean firstNum = false;
 	
 	ArrayList<Double> numList = new ArrayList<Double>();
 	
@@ -27,7 +29,7 @@ public class Opdr1 extends Applet implements ActionListener
 		knop.addActionListener(this);
 	
 		outputField = new TextField();
-		outputField.setBounds(50,110,90,20);
+		outputField.setBounds(10,110,180,20);
 		add(outputField);
 	}
 		
@@ -37,16 +39,34 @@ public class Opdr1 extends Applet implements ActionListener
 		if(source == numField)
 		{
 		numList.add(Double.parseDouble(numField.getText()));
-		System.out.println(numList);
 		numField.setText("");
 		}
 		
 		if(source == knop)
 		{
-			for(int i = 0 ; i<7;i++)
+			for(Double num : numList)
 			{
-				
+				if(firstNum)
+				{
+					if(num < lowest)
+					{
+						lowest = num;
+					}
+					if(num > highest)
+					{
+						highest = num;	
+					}
+				}
+				if(firstNum == false)
+				{
+					highest = num;
+					lowest = num;
+					firstNum = true;
+				}
 			}
+			firstNum = false;
+			outputField.setText("Lowest: " + lowest + " | Highest: " + highest);
+			numList.clear();
 		}
 	}
 }
