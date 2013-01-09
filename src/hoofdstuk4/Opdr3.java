@@ -45,6 +45,8 @@ public class Opdr3 extends Applet implements ActionListener
 		if(source == knopKleiner)
 		{
 			diameter--;
+			if(diameter < 0)
+				diameter = 0;
 			repaint();
 		}
 			

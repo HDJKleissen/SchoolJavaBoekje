@@ -30,8 +30,8 @@ public class Opdr4 extends Applet implements ActionListener
 	
 	public void paint(Graphics g)
 	{
-		g.drawString("Input the amount of seconds", 25, 10);
-		g.drawString(" to be converted", 55, 25);
+		g.drawString("Input the amount of seconds", 25, 15);
+		g.drawString(" to be converted", 55, 30);
 	}
 	
 	public void actionPerformed(ActionEvent e)
